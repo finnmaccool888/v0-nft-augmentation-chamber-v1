@@ -4,14 +4,12 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Button from "@/components/common/Button"
 import { useCostumes } from "@/hooks/useCostumes"
-import { Sparkles, Zap, Shield } from "lucide-react"
+import { Zap } from "lucide-react"
 
 export default function CostumeSelection({ onSelect }: { onSelect: (costume: any) => void }) {
   const { costumes, isLoading } = useCostumes()
   const [selectedCostume, setSelectedCostume] = useState(null)
-  const [filter, setFilter] = useState("all")
-
-  const filteredCostumes = filter === "all" ? costumes : costumes.filter((costume) => costume.category === filter)
+  const filteredCostumes = costumes
 
   const handleSelect = (costume: any) => {
     setSelectedCostume(costume)
@@ -25,23 +23,6 @@ export default function CostumeSelection({ onSelect }: { onSelect: (costume: any
 
   return (
     <div>
-      <div className="mb-6">
-        <div className="flex space-x-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-gray-800">
-          <Button variant={filter === "all" ? "primary" : "secondary"} size="sm" onClick={() => setFilter("all")}>
-            All
-          </Button>
-          <Button variant={filter === "cyber" ? "primary" : "secondary"} size="sm" onClick={() => setFilter("cyber")}>
-            <Zap className="w-4 h-4 mr-1" /> Cyber
-          </Button>
-          <Button variant={filter === "armor" ? "primary" : "secondary"} size="sm" onClick={() => setFilter("armor")}>
-            <Shield className="w-4 h-4 mr-1" /> Armor
-          </Button>
-          <Button variant={filter === "magic" ? "primary" : "secondary"} size="sm" onClick={() => setFilter("magic")}>
-            <Sparkles className="w-4 h-4 mr-1" /> Magic
-          </Button>
-        </div>
-      </div>
-
       {isLoading ? (
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
           {[1, 2, 3, 4, 5, 6].map((i) => (

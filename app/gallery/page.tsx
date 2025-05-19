@@ -34,32 +34,6 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          <div className="mb-6">
-            <div className="flex space-x-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-gray-800">
-              <Button variant="primary" size="sm">
-                All
-              </Button>
-              <Button variant="secondary" size="sm">
-                Cyber
-              </Button>
-              <Button variant="secondary" size="sm">
-                Armor
-              </Button>
-              <Button variant="secondary" size="sm">
-                Magic
-              </Button>
-              <Button variant="secondary" size="sm">
-                Rare
-              </Button>
-              <Button variant="secondary" size="sm">
-                Epic
-              </Button>
-              <Button variant="secondary" size="sm">
-                Legendary
-              </Button>
-            </div>
-          </div>
-
           <GalleryGrid />
 
           <div className="mt-8 flex justify-center">

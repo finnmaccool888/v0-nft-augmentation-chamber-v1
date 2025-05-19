@@ -8,6 +8,8 @@ import MintProcess from "@/components/MintProcess"
 import ProgressBar from "@/components/common/ProgressBar"
 import { useWallet } from "@/hooks/useWallet"
 import WalletRequired from "@/components/WalletRequired"
+import EnhancedBackground from "@/components/EnhancedBackground"
+import GlitchText from "@/components/GlitchText"
 
 // Updated steps without the Connect Wallet step
 const steps = ["Select NFT", "Choose Augmentation", "Preview & Mint"]
@@ -50,7 +52,12 @@ export default function MainFlow() {
 
   // If wallet is not connected, show the wallet required message
   if (!isConnected) {
-    return <WalletRequired />
+    return (
+      <>
+        <EnhancedBackground />
+        <WalletRequired />
+      </>
+    )
   }
 
   const renderCurrentStep = () => {
@@ -92,19 +99,24 @@ export default function MainFlow() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <div className="mb-8">
-        <ProgressBar steps={steps} currentStep={currentStep} />
-      </div>
-
-      <div className="bg-gray-900 border border-red-600 rounded-lg p-6 shadow-lg shadow-red-900/20">
-        <div className="mb-4 border-b border-gray-800 pb-4">
-          <h2 className="text-2xl font-bold text-red-500">{isMinting ? "Minting Augmentation" : steps[currentStep]}</h2>
-          <p className="text-gray-400 font-mono text-sm">SYSTEM STATUS: OPERATIONAL</p>
+    <>
+      <EnhancedBackground />
+      <div className="container mx-auto px-4 py-8 max-w-4xl relative z-10">
+        <div className="mb-8">
+          <ProgressBar steps={steps} currentStep={currentStep} />
         </div>
 
-        {renderCurrentStep()}
+        <div className="bg-gray-900/80 backdrop-blur-md border border-red-600 rounded-lg p-6 shadow-lg shadow-red-900/20">
+          <div className="mb-4 border-b border-gray-800 pb-4">
+            <h2 className="text-2xl font-bold">
+              <GlitchText text={isMinting ? "Minting Augmentation" : steps[currentStep]} glitchIntensity="low" />
+            </h2>
+            <p className="text-gray-400 font-mono text-sm">SYSTEM STATUS: OPERATIONAL</p>
+          </div>
+
+          {renderCurrentStep()}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

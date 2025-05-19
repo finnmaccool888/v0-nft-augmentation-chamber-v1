@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 interface ProgressBarProps {
   steps: string[]
   currentStep: number
@@ -19,9 +23,29 @@ export default function ProgressBar({ steps, currentStep }: ProgressBarProps) {
       </div>
 
       <div className="relative w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-        <div
-          className="absolute top-0 left-0 h-full bg-red-600 transition-all duration-300"
-          style={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
+        {/* Animated background for progress bar */}
+        <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-purple-600 to-cyan-500 opacity-30"></div>
+
+        {/* Actual progress */}
+        <motion.div
+          className="absolute top-0 left-0 h-full bg-gradient-to-r from-red-600 to-red-500"
+          initial={{ width: 0 }}
+          animate={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        />
+
+        {/* Animated glow effect */}
+        <motion.div
+          className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-transparent via-red-400/50 to-transparent"
+          animate={{
+            x: ["-100%", "200%"],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+            repeatDelay: 1,
+          }}
         />
       </div>
 

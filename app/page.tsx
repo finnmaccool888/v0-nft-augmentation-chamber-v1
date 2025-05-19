@@ -9,6 +9,9 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <IntroAnimation />
         <MainFlow />
+
+        {/* Scan line effect */}
+        <div className="scan-line"></div>
       </Suspense>
     </main>
   )
