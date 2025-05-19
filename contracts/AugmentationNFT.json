@@ -1,0 +1,173 @@
+const AugmentationNFTAbi = [
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "augmentationId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "originalContract",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "originalTokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum AugmentationNFT.AugmentationType",
+        "name": "augType",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum AugmentationNFT.RarityLevel",
+        "name": "rarity",
+        "type": "uint8"
+      }
+    ],
+    "name": "AugmentationMinted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "originalContract",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "originalTokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAugmentations",
+    "outputs": [
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getAugmentationDetails",
+    "outputs": [
+      {
+        "internalType": "enum AugmentationNFT.AugmentationType",
+        "name": "augType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum AugmentationNFT.RarityLevel",
+        "name": "rarity",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "processingBoost",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "powerBoost",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "defenseBoost",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "originalContract",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "originalTokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "tokenURI",
+        "type": "string"
+      },
+      {
+        "internalType": "enum AugmentationNFT.AugmentationType",
+        "name": "augType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum AugmentationNFT.RarityLevel",
+        "name": "rarity",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "processingBoost",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "powerBoost",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "defenseBoost",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      }
+    ],
+    "name": "mintAugmentation",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
+
+export default AugmentationNFTAbi
