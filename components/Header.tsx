@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Menu, X, User, Grid, Info, LogOut, Loader2 } from "lucide-react"
 import Button from "@/components/common/Button"
@@ -28,8 +29,19 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-red-500 mr-1 tracking-wider">0N1</span>
-            <span className="text-white font-medium tracking-wider">FORCE</span>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="relative h-16 w-auto" // Increased from h-8 to h-16 (twice as big)
+            >
+              <Image
+                src="/images/oni-force-logo.png"
+                alt="ONI FORCE"
+                width={300} // Increased from 150 to 300
+                height={64} // Increased from 32 to 64
+                className="h-16 w-auto" // Increased from h-8 to h-16
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,7 +60,7 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-4">
             {isConnected ? (
               <div className="flex items-center">
-                <div className="mr-4 bg-black px-3 py-1 rounded-md border border-red-500/30">
+                <div className="mr-4 bg-black px-3 py-1 rounded-none border border-red-500/30">
                   <p className="text-xs text-red-500">CONNECTED</p>
                   <p className="text-sm text-white truncate max-w-[120px] font-mono">
                     {address?.substring(0, 6)}...{address?.substring(address.length - 4)}
@@ -125,7 +137,7 @@ export default function Header() {
 
               {isConnected && (
                 <div className="pt-4 border-t border-gray-800">
-                  <div className="bg-black px-3 py-2 rounded-md border border-red-500/30">
+                  <div className="bg-black px-3 py-2 rounded-none border border-red-500/30">
                     <p className="text-xs text-red-500">CONNECTED</p>
                     <p className="text-sm text-white truncate font-mono">{address}</p>
                   </div>

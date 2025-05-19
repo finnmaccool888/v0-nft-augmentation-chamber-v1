@@ -9,8 +9,11 @@ import { NFTProvider } from "@/contexts/NFTContext"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "0N1 Force Augmentation Chamber",
-  description: "Enhance your 0N1 Force NFTs with powerful augmentations",
+  title: "ONI FORCE | Augmentation Chamber",
+  description: "Enhance your ONI FORCE NFTs with powerful augmentations",
+  icons: {
+    icon: "/images/oni-force-logo.png",
+  },
     generator: 'v0.dev'
 }
 
