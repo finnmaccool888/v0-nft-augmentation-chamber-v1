@@ -12,7 +12,7 @@ import EnhancedBackground from "@/components/EnhancedBackground"
 import GlitchText from "@/components/GlitchText"
 
 // Updated steps without the Connect Wallet step
-const steps = ["Select NFT", "Choose Augmentation", "Preview & Mint"]
+const steps = ["SELECT NFT", "CHOOSE AUGMENTATION", "PREVIEW & MINT"]
 
 export default function MainFlow() {
   const [currentStep, setCurrentStep] = useState(0)
@@ -106,10 +106,14 @@ export default function MainFlow() {
           <ProgressBar steps={steps} currentStep={currentStep} />
         </div>
 
-        <div className="bg-gray-900/80 backdrop-blur-md border border-red-600 rounded-lg p-6 shadow-lg shadow-red-900/20">
+        <div className="bg-black border border-red-500/30 p-6 shadow-lg">
           <div className="mb-4 border-b border-gray-800 pb-4">
-            <h2 className="text-2xl font-bold">
-              <GlitchText text={isMinting ? "Minting Augmentation" : steps[currentStep]} glitchIntensity="low" />
+            <h2 className="text-2xl font-bold tracking-wider">
+              {isMinting ? (
+                <GlitchText text="MINTING AUGMENTATION" glitchIntensity="low" />
+              ) : (
+                <GlitchText text={steps[currentStep]} glitchIntensity="low" />
+              )}
             </h2>
             <p className="text-gray-400 font-mono text-sm">SYSTEM STATUS: OPERATIONAL</p>
           </div>

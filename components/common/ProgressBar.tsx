@@ -14,7 +14,7 @@ export default function ProgressBar({ steps, currentStep }: ProgressBarProps) {
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`text-xs font-medium ${index <= currentStep ? "text-red-500" : "text-gray-500"}`}
+            className={`text-xs font-medium tracking-wider ${index <= currentStep ? "text-red-500" : "text-gray-500"}`}
             style={{ width: `${100 / steps.length}%`, textAlign: "center" }}
           >
             {step}
@@ -22,13 +22,10 @@ export default function ProgressBar({ steps, currentStep }: ProgressBarProps) {
         ))}
       </div>
 
-      <div className="relative w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-        {/* Animated background for progress bar */}
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-purple-600 to-cyan-500 opacity-30"></div>
-
+      <div className="relative w-full h-1 bg-gray-800 overflow-hidden">
         {/* Actual progress */}
         <motion.div
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-red-600 to-red-500"
+          className="absolute top-0 left-0 h-full bg-red-500"
           initial={{ width: 0 }}
           animate={{ width: `${(currentStep / (steps.length - 1)) * 100}%` }}
           transition={{ duration: 0.5, ease: "easeOut" }}

@@ -32,37 +32,22 @@ export default function IntroAnimation() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <motion.div
-            className="mb-4 text-4xl font-bold"
-            animate={{
-              textShadow: [
-                "0 0 5px #ff0000, 0 0 10px #ff0000",
-                "0 0 2px #ff0000, 0 0 5px #ff0000",
-                "0 0 10px #ff0000, 0 0 20px #ff0000",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-          >
-            <GlitchText text="0N1 FORCE" glitchIntensity="high" className="text-4xl font-bold" />
+          <motion.div className="mb-4 text-5xl font-bold tracking-wider">
+            <GlitchText text="0N1 FORCE" isRed={true} glitchIntensity="high" className="text-5xl font-bold" />
           </motion.div>
 
           <motion.div
-            className="text-2xl font-mono text-gray-300"
+            className="text-2xl font-mono text-white tracking-wide"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <GlitchText
-              text="AUGMENTATION CHAMBER"
-              color="text-cyan-400"
-              glitchIntensity="low"
-              className="text-2xl font-mono"
-            />
+            <GlitchText text="AUGMENTATION CHAMBER" glitchIntensity="low" className="text-2xl font-mono" />
           </motion.div>
 
           {/* Digital noise effect */}
           <motion.div
-            className="mt-8 h-1 bg-gradient-to-r from-red-600 via-purple-600 to-cyan-500"
+            className="mt-8 h-1 bg-red-500"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ delay: 1.2, duration: 1.5 }}
@@ -77,23 +62,10 @@ export default function IntroAnimation() {
             INITIALIZING SYSTEM...
           </motion.div>
 
-          {/* Digital scan line effect */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: "linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 50%)",
-              backgroundSize: "100% 4px",
-              mixBlendMode: "overlay",
-              opacity: 0.2,
-            }}
-            animate={{ y: [0, 100] }}
-            transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2, ease: "linear" }}
-          />
-
           {/* Random data blocks */}
           <div className="absolute -bottom-16 left-0 right-0 flex justify-center">
             <motion.div
-              className="text-[8px] font-mono text-cyan-500 opacity-50 text-left"
+              className="text-[8px] font-mono text-red-500 opacity-50 text-left"
               animate={{ opacity: [0.3, 0.6, 0.3] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
             >

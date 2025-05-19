@@ -5,9 +5,9 @@
 :root {
   --background: 0 0% 0%;
   --foreground: 0 0% 100%;
-  --card: 0 0% 5%;
+  --card: 0 0% 0%;
   --card-foreground: 0 0% 100%;
-  --popover: 0 0% 5%;
+  --popover: 0 0% 0%;
   --popover-foreground: 0 0% 100%;
   --primary: 0 100% 50%;
   --primary-foreground: 0 0% 100%;
@@ -65,7 +65,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(255, 0, 0, 0.1);
   z-index: 999;
   animation: scan 4s linear infinite;
 }
@@ -83,8 +83,7 @@ body {
 input,
 textarea,
 select {
-  @apply bg-gray-800 border border-gray-700 rounded-md py-2 px-4 text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-colors;
-  background-image: linear-gradient(to bottom, rgba(255, 0, 60, 0.05), transparent);
+  @apply bg-black border border-gray-800 rounded-none py-2 px-4 text-white focus:outline-none focus:ring-1 focus:ring-red-500 focus:border-red-500 transition-colors;
 }
 
 /* Custom scrollbar */
@@ -95,34 +94,21 @@ select {
 
 .scrollbar-thin::-webkit-scrollbar-track {
   background: #1f1f1f;
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #e11d48;
-  border-radius: 2px;
+  background: #ff0000;
+  border-radius: 0;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: #f43f5e;
+  background: #ff3333;
 }
 
 /* Cyberpunk neon glow */
 .neon-red {
   text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
-}
-
-.neon-cyan {
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
-}
-
-.neon-purple {
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
-}
-
-/* Cyberpunk box shadow */
-.cyber-box {
-  box-shadow: 0 0 10px rgba(255, 0, 60, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 /* Animated circuit paths */

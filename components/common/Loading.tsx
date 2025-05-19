@@ -8,18 +8,13 @@ export default function Loading() {
       <div className="flex flex-col items-center">
         <div className="relative">
           <motion.div
-            className="w-16 h-16 border-4 border-red-600/30 border-t-red-600 rounded-full"
+            className="w-16 h-16 border-4 border-red-500/30 border-t-red-500 rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
           />
-          <motion.div
-            className="absolute inset-0 w-16 h-16 border-4 border-cyan-500/30 border-b-cyan-500 rounded-full"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          />
         </div>
         <motion.p
-          className="mt-4 text-red-600 font-mono text-lg"
+          className="mt-4 text-red-500 font-mono text-lg tracking-wider"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
         >
@@ -28,7 +23,7 @@ export default function Loading() {
 
         {/* Digital data display */}
         <motion.div
-          className="mt-4 text-[8px] font-mono text-cyan-500 opacity-50 text-center"
+          className="mt-4 text-[8px] font-mono text-red-500 opacity-50 text-center"
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
         >

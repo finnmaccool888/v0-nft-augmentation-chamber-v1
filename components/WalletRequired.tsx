@@ -15,27 +15,27 @@ export default function WalletRequired() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-gray-900/80 backdrop-blur-md border border-red-600 rounded-lg p-8 shadow-lg shadow-red-900/20 max-w-md w-full text-center relative overflow-hidden"
+        className="bg-black border border-red-500/30 p-8 shadow-lg max-w-md w-full text-center relative overflow-hidden"
       >
         {/* Animated circuit lines */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-30"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-30"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-30"></div>
         <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-red-500 to-transparent opacity-30"></div>
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-cyan-500 to-transparent opacity-30"></div>
+        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-red-500 to-transparent opacity-30"></div>
 
-        <div className="w-20 h-20 bg-gray-800/80 rounded-full flex items-center justify-center mx-auto mb-6 border border-red-500/50 cyber-box">
+        <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-6 border border-red-500/50">
           <Wallet className="w-10 h-10 text-red-500" />
         </div>
 
-        <h2 className="text-2xl font-bold text-white mb-2">
-          <GlitchText text="Wallet Connection Required" glitchIntensity="low" />
+        <h2 className="text-2xl font-bold text-white mb-2 tracking-wider">
+          <GlitchText text="WALLET CONNECTION REQUIRED" glitchIntensity="low" />
         </h2>
         <p className="text-gray-400 mb-6">
           Connect your wallet to access your 0N1 Force NFTs and begin the augmentation process.
         </p>
 
         <Button onClick={connect} isLoading={isConnecting} className="w-full">
-          Connect Wallet
+          CONNECT WALLET
         </Button>
 
         <p className="mt-4 text-sm text-gray-500">
@@ -44,13 +44,13 @@ export default function WalletRequired() {
 
         {/* Digital data display */}
         <div className="mt-6 pt-4 border-t border-gray-800 text-left">
-          <p className="text-xs font-mono text-cyan-500">SYSTEM STATUS</p>
+          <p className="text-xs font-mono text-red-500">SYSTEM STATUS</p>
           <div className="grid grid-cols-2 gap-2 mt-2">
-            <div className="bg-gray-800/60 p-2 rounded text-xs font-mono">
-              <span className="text-gray-500">NETWORK:</span> <span className="text-green-500">ONLINE</span>
+            <div className="bg-black p-2 border border-gray-800 text-xs font-mono">
+              <span className="text-gray-500">NETWORK:</span> <span className="text-red-500">ONLINE</span>
             </div>
-            <div className="bg-gray-800/60 p-2 rounded text-xs font-mono">
-              <span className="text-gray-500">CHAIN:</span> <span className="text-yellow-500">ETHEREUM</span>
+            <div className="bg-black p-2 border border-gray-800 text-xs font-mono">
+              <span className="text-gray-500">CHAIN:</span> <span className="text-red-500">ETHEREUM</span>
             </div>
           </div>
         </div>
